@@ -94,7 +94,8 @@
 							"buildTarget": "demo-frontend:esbuild:production"
 						},
 						"development": {
-							"buildTarget": "demo-frontend:esbuild:development"
+							"buildTarget": "demo-frontend:esbuild:development",
+							"proxyConfig": "proxy.conf.json"
 						}
 					},
 					"defaultConfiguration": "development",
