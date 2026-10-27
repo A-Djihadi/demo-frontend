@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
+import { GreetingComponent } from './greeting.component';
 
 @Component({
-  imports: [],
+  imports: [GreetingComponent],
   selector: 'app-root',
-  styleUrl: './app.css',
-  templateUrl: './app.html',
+  template: '<h1>Hello, demo-frontend</h1><app-greeting />',
 })
 export class App {
   protected readonly title = signal('demo-frontend');

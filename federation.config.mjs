@@ -6,7 +6,7 @@ export default withNativeFederation({
 
 
   exposes: {
-    './Component': './src/app/app.ts',
+    './Greeting': './src/app/greeting.component.ts',
   },
 
   //shareScope: autoShareScope({level: 'minor'}),
