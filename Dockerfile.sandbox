@@ -1,0 +1,10 @@
+# Sandbox des agents : réseau coupé à l'exécution.
+# node_modules est installé dans /node_modules : le dépôt monté en /work le trouve
+# par la résolution Node (dossiers parents) sans que le montage le masque.
+FROM node:24-bookworm-slim
+COPY package.json package-lock.json /
+RUN cd / && npm ci --no-fund --no-audit && npm cache clean --force
+RUN useradd -m runner
+USER runner
+ENV PATH=/node_modules/.bin:$PATH NG_CLI_ANALYTICS=false
+WORKDIR /work
